@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "prisma migrate dev && prisma generate && prisma db seed && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:seed": "prisma db seed"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
