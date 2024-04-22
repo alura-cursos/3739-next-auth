@@ -6,6 +6,7 @@ import { Input } from '@/components/Input'
 import { Button } from '@/components/Button'
 import { ArrowFoward } from '@/components/icons/ArrowFoward'
 import { useState } from 'react'
+import { signIn } from 'next-auth/react'
 
 export default function FormLogin() {
 
@@ -15,7 +16,11 @@ export default function FormLogin() {
     const loginAttempt = async (event) => {
 
         event.preventDefault()
-        console.log('login?')
+        signIn('credentials', {
+            callbackUrl: '/',
+            email,
+            password
+        })
     }
 
     return (
